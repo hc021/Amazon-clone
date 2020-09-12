@@ -1,0 +1,57 @@
+.menu {
+  position: absolute;
+  list-style: none;
+  background: #000000aa;
+  width: 100%;
+  z-index: 600;
+  top: 0;
+  transition: all 2s;
+  display: none;
+  /* padding-left: 20px; */
+}
+.menu-list {
+  width: 350px;
+  background: #ffffff;
+  /* overflow: hidden; */
+  overflow-y: scroll;
+  height: 900px;
+  position: relative;
+  left: -380px;
+  padding-left: 20px;
+  transition: all 0.8s;
+}
+.menu li {
+  height: 50px;
+}
+.menu li:hover {
+  background: #eaeded;
+}
+.move-left-for-list {
+  transform: translateX(-380px);
+}
+.move-right-for-list {
+  transform: translateX(380px);
+}
+
+.body {
+  overflow-y: hidden !important;
+}
+.clearIcon-box {
+  position: relative;
+  transition: all 0.8s;
+}
+.clearIcon {
+  color: #fff;
+  position: absolute;
+  left: 380px;
+  bottom: -35px;
+  cursor: pointer;
+
+  /* z-index: 600; */
+}
+.clearIcon-opacity {
+  opacity: 0;
+}
+.displayMenu{
+    display: block;
+}

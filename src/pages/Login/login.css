@@ -1,0 +1,155 @@
+.signIn {
+  width: 350px;
+  height: 270px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  /* background: green; */
+  border: 1px solid gray;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.signIn > h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.email {
+  font-weight: 600;
+  margin-bottom: 3px;
+  font-size: 0.8rem;
+}
+.signIn > input {
+  width: 95%;
+  padding: 6px;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid black;
+  background: #e8f0fe;
+}
+.signIn > span {
+  color: #dd2826;
+  font-size: 0.8rem;
+  display: block;
+}
+.submit-btn {
+  width: 100%;
+  padding: 6px;
+  background: #f0c353;
+  outline: none;
+  border: 1px solid;
+  margin: 15px 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background: #f6bb25;
+}
+.submit-btn:active {
+  background: #ecad0d;
+}
+.create,
+.newToAmazon,
+.problem-occer {
+  margin: 0 auto;
+  width: 350px;
+}
+.legal {
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+.help {
+  font-size: 0.8rem;
+}
+.legal > span,
+.help {
+  color: #0974cc;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.legal > span:hover,
+.help:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+.newToAmazon {
+  color: grey;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.newToAmazon > div {
+  width: 120px;
+  border-bottom: 1px solid grey;
+}
+.create {
+  width: 350px;
+}
+.create > button {
+  width: 100%;
+  background: #cdd3d8;
+  transition: all 0.3s;
+  border: 1px solid grey;
+  padding: 7px;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.create > button:hover {
+  background: #dfe2e7;
+}
+.left-pointer {
+  font-size: 0.5rem !important;
+}
+.menu-bar {
+  border: 1px solid rgb(168, 167, 167);
+
+  border-radius: 3px;
+
+  padding: 5px;
+  margin-left: 10px;
+  margin-right: -10px;
+  cursor: pointer;
+}
+.menu-bar:hover {
+  border-color: #fafbfb;
+}
+.menu-bar-icon {
+  color: #fff;
+  letter-spacing: 3px !important;
+}
+.problem-occer {
+  border: 1px solid #cf0000;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin-top: 10px;
+  display: flex;
+}
+.caution-icon {
+  font-size: 2rem !important;
+  color: #cf0000 !important;
+}
+.problem-occer > div {
+  padding-left: 20px;
+}
+.problem-occer > div > h4 {
+    color: #cf0000;
+
+}
+.problem-occer > div >p{
+    font-size: .8rem;
+    margin-top: 5px;
+}
+.login_logo{
+  width: 100px;
+  margin-top: 20px;
+  position: relative;
+  right: -45%;
+}
+
