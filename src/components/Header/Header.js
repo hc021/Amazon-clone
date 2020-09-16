@@ -3,13 +3,11 @@ import logo from './images/amazon_PNG11.png'
 import "./Header.css"
 import { Link } from 'react-router-dom'
 import SearchIcon from '@material-ui/icons/Search'
-
 import HeaderLink from './HeaderLink';
 import Checkout from './Checkout'
 import { useStateValue } from '../../data/StateProvider'
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from './Menu'
-import { useState } from 'react'
 import { auth } from '../../firebase'
 
 
@@ -17,8 +15,6 @@ import { auth } from '../../firebase'
 
 
 function Header() {
-    const header =
-        { url: "/login", span1Txt: "hello", span2Txt: "Sign in" }
     const [{ basket, user }] = useStateValue();
     const login = () => {
         if (user) {
@@ -50,7 +46,7 @@ function Header() {
                 </div>
 
                 <div className="header_nav">
-                    <HeaderLink path={!user && "/login"} span1={user ? `Hello ${user?.email}` : "Hello"} span2={user ? "sign out" : "sign in"} click={login} />
+                    <HeaderLink path={!user && "/login"} span1={user ? `Hello ${user?.email}` : "Hello Guest"} span2={user ? "Sign out" : "Sign in"} click={login} />
                     <HeaderLink path="/login" span1="Returns" span2="& Orders" />
                     <HeaderLink path="/checkout" span1="Your" span2="Prime" />
 

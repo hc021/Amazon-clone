@@ -1,15 +1,21 @@
 import React from 'react'
 import './menu.css'
 import ClearIcon from '@material-ui/icons/Clear';
+import { useStateValue } from '../../data/StateProvider'
+import { Link } from 'react-router-dom';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-function Menu({ status }) {
+
+function Menu() {
+    const [{ user }] = useStateValue();
     const handleMenu = () => {
         const action = document.querySelector(".menu-list");
         action.classList.toggle("move-right-for-list");
         action.classList.toggle("move-left-for-list");
         document.querySelector(".clearIcon-box").classList.toggle("clearIcon-opacity")
         document.body.classList.toggle('body');
-        setTimeout(()=>(document.querySelector(".menu").classList.toggle("displayMenu")),600)
+        setTimeout(() => (document.querySelector(".menu").classList.toggle("displayMenu")), 600)
     };
     return (
         <div className={"menu"}>
@@ -17,38 +23,40 @@ function Menu({ status }) {
                 <ClearIcon className="clearIcon" />
             </div>
             <div className="menu-list">
+                {user ? <h2 className="user-title">{`Hello ${user?.email}`}</h2>
+                :<Link className="user-login-link" onClick={handleMenu} to="/login"><AccountCircleIcon/> <span>Hello, Sign in</span></Link>}
                 <h3>SHOP BY CATEGORY</h3>
-                <li>Amazon Music</li>
-                <li>Kindle E-readers & Books</li>
-                <li>Appstore for Android</li>
-                <li>Electronics</li>
-                <li>Computers</li>
-                <li>Smart Home</li>
-                <li>Arts & Crafts</li>
-                <li>Automotive</li>
-                <li>Baby</li>
-                <li>Beauty and personal care</li>
-                <li>Women's Fashion</li>
-                <li>Men's Fashion</li>
-                <li>Girls' Fashion</li>
-                <li>Boys' Fashion</li>
-                <li>Health and Household</li>
-                <li>Home and Kitchen</li>
-                <li>Industrial and Scientific</li>
-                <li>Luggage</li>
-                <li>Movies & Television</li>
-                <li>Pet supplies</li>
-                <li>Software</li>
-                <li>Sports and Outdoors</li>
-                <li>Tools & Home Improvement</li>
-                <li>Toys and Games</li>
-                <li>Video Games</li>
-                <li>Gift Cards</li>
-                <li>#FoundItOnAmazon</li>
-                <li>Amazon Live</li>
-                <li>International Shopping</li>
-                <li>Amazon Second Chance</li>
-                <li>Full Store Directory</li>
+                <li><span>Amazon Music</span><ChevronRightIcon/></li>
+                <li><span>Kindle E-readers & Books</span><ChevronRightIcon/></li>
+                <li><span>Appstore for Android</span><ChevronRightIcon/></li>
+                <li><span>Electronics</span><ChevronRightIcon/></li>
+                <li><span>Computers</span><ChevronRightIcon/></li>
+                <li><span>Smart Home</span><ChevronRightIcon/></li>
+                <li><span>Arts & Crafts</span><ChevronRightIcon/></li>
+                <li><span>Automotive</span><ChevronRightIcon/></li>
+                <li><span>Baby</span><ChevronRightIcon/></li>
+                <li><span>Beauty and personal care</span><ChevronRightIcon/></li>
+                <li><span>Women's Fashion</span><ChevronRightIcon/></li>
+                <li><span>Men's Fashion</span><ChevronRightIcon/></li>
+                <li><span>Girls' Fashion</span><ChevronRightIcon/></li>
+                <li><span>Boys' Fashion</span><ChevronRightIcon/></li>
+                <li><span>Health and Household</span><ChevronRightIcon/></li>
+                <li><span>Home and Kitchen</span><ChevronRightIcon/></li>
+                <li><span>Industrial and Scientific</span><ChevronRightIcon/></li>
+                <li><span>Luggage</span><ChevronRightIcon/></li>
+                <li><span>Movies & Television</span><ChevronRightIcon/></li>
+                <li><span>Pet supplies</span><ChevronRightIcon/></li>
+                <li><span>Software</span><ChevronRightIcon/></li>
+                <li><span>Sports and Outdoors</span><ChevronRightIcon/></li>
+                <li><span>Tools & Home Improvement</span><ChevronRightIcon/></li>
+                <li><span>Toys and Games</span><ChevronRightIcon/></li>
+                <li><span>Video Games</span><ChevronRightIcon/></li>
+                <li><span>Gift Cards</span><ChevronRightIcon/></li>
+                <li><span>FoundItOnAmazon</span><ChevronRightIcon/></li>
+                <li><span>Amazon Live</span><ChevronRightIcon/></li>
+                <li><span>International Shopping</span><ChevronRightIcon/></li>
+                <li><span>Amazon Second Chance</span><ChevronRightIcon/></li>
+                <li><span>Full Store Directory</span><ChevronRightIcon/></li>
             </div>
 
         </div>

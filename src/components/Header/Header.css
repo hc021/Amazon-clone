@@ -7,7 +7,7 @@
   background: #10161e;
   display: flex;
   align-items: center;
-  position: sticky;
+  position: relative;
   top:0 ;
   z-index: 100;
 }
