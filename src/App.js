@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { useStateValue } from './data/StateProvider';
 import { auth } from './firebase';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
+import Search from './pages/Search/Search';
 
 
 
@@ -38,12 +39,13 @@ function App() {
   // console.log(user)
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <Switch>    
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/" component={Home} />
         <Route exact path="/:params" component={ProductDetail}/>
+        <Route exact path='/search/:parmas' component={Search}/>
         <Route component={Page404} />
       </Switch>
     </div>

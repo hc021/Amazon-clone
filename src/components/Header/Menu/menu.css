@@ -5,27 +5,28 @@
   width: 100%;
   z-index: 600;
   top: 0;
-  transition: all 2s;
+  /* transition: all 2s; */
   display: none;
   /* padding-left: 20px; */
 }
 .menu-list {
   width: 350px;
   background: #ffffff;
-  /* overflow: hidden; */
+  overflow: hidden;
   overflow-y: scroll;
-  height:100vh;
+  height: 100vh;
   position: relative;
   left: -380px;
   /* padding-left: 20px; */
-  transition: all 0.8s;
+  transition: transform 0.3s;
 }
-.menu-list h3{
-font-size: .9rem;
-color: #979797;
-height: 50px;
+.menu-list h3 {
+  font-size: 0.9rem;
+  color: #979797;
+  height: 50px;
   display: flex;
-  align-items: center; padding: 0 40px;
+  align-items: center;
+  padding: 0 40px;
 }
 .menu li {
   height: 50px;
@@ -33,32 +34,26 @@ height: 50px;
   align-items: center;
   cursor: pointer;
   padding: 0 40px;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
-.menu-list li:nth-child(4),.menu-list li:nth-child(27){
+.categorys >li:nth-child(5),
+.categorys >li:nth-child(26) {
   border-bottom: #232f3e;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-
 }
-.menu li span{
+.menu li span {
   margin-right: auto;
 }
 .menu li:hover {
   background: #eaeded;
-}
-.move-left-for-list {
-  transform: translateX(-380px);
-}
-.move-right-for-list {
-  transform: translateX(380px);
 }
 .body {
   overflow-y: hidden !important;
 }
 .clearIcon-box {
   position: relative;
-  transition: all 0.8s;
+  transition: all 0.3s;
 }
 .clearIcon {
   color: #fff;
@@ -66,27 +61,50 @@ height: 50px;
   left: 380px;
   bottom: -35px;
   cursor: pointer;
-
 }
 .clearIcon-opacity {
   opacity: 0;
 }
-.displayMenu{
-    display: block;
+.displayMenu {
+  display: block;
 }
-.user-title,.user-login-link{
+.user-box{
+  position: relative;
+}
+.user-title,
+.user-login-link {  
   background: #232f3e;
   color: #fff;
   font-size: 1rem;
   text-decoration: none;
   display: block;
   margin-left: -20px;
-  padding: 10px 50px;
-  line-height:100%;
+  padding: 15px 50px;
+  line-height: 100%;
   display: flex;
   align-items: center;
+  left: -380px;
+  transition: all .3s;
 }
-.user-login-link >span{
+.user-login-link > span {
   margin-left: 10px;
   font-weight: 600;
+}
+.move-left-for-list {
+  transform: translateX(-380px);
+}
+.move-right-for-list {
+  transform: translateX(380px);
+}
+.categorys{
+  position: relative;
+  transition: all .3s;
+}
+.scroll-switchOff{
+  overflow-y: hidden;
+}
+.electronics-list li:nth-child(2){
+  pointer-events: none;
+  font-weight: 600;
+  color: rgb(168, 165, 165);
 }

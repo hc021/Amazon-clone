@@ -1,0 +1,30 @@
+.electronics-list {
+  width: 350px;
+  height: 100vh;
+  position: absolute;
+  /* left: 300px; */
+  top: 0px;
+  left: 350px;
+  background: #ffffff;
+  transition: all 0.8s;
+  overflow-y: scroll !important;
+  z-index: 600px;
+}
+.close {
+  max-width: 0;
+}
+.ele-moveLeft {
+  transform: translateX(-350px);
+  
+}
+.ele-moveRight {
+  transform: translateX(350px);
+}
+.main-menu {
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+.main-menu:hover .menu-arrowBackIcon{
+  color: grey;
+}
