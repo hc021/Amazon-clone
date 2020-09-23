@@ -34,10 +34,20 @@
   display: flex;
   flex: 1;
 }
+.header_searchIcon_link{
+  text-decoration: none;
+  color: #fff;
+}
 .header_searchIcon {
   background: #f79b34;
   height: 22px !important;
   padding: 5px;
+}
+.header_searchIcon_link:hover .header_searchIcon{
+  background: #f38a12;
+}
+.header_searchIcon_link:active .header_searchIcon{
+  background: #f5ad5b;
 }
 .header_searchInput {
   height: 12px;

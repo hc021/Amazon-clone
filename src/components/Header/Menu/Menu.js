@@ -70,7 +70,7 @@ function Menu() {
                     <li><span>International Shopping</span><ChevronRightIcon /></li>
                     <li><span>Amazon Second Chance</span><ChevronRightIcon /></li>
                     <li><span>Full Store Directory</span><ChevronRightIcon /></li>
-                    <Electronics menu_list={action} itself={electronicsList} categroy={categoryList} />
+                    <Electronics menu_list={action} itself={electronicsList} categroy={categoryList} handleMenu={handleMenu} />
                 </div>
             </div>
 

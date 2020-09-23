@@ -42,6 +42,10 @@
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
+.categorys >li:nth-child(5){
+  text-decoration: underline;
+  color: blue;
+}
 .menu li span {
   margin-right: auto;
 }

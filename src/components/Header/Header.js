@@ -14,14 +14,15 @@ import { auth } from '../../firebase'
 
 
 
-function Header({handleClick}) {
-    const [{ basket, user, search, data }, dispatch] = useStateValue();
-    const [searchInput, setSearchInput] = useState("")
-    // const [newArry, setNewArry] = useState([]);
-    useEffect(() => {
-        // console.log(newArry)
-        console.log(data)
-    }, [ data])
+function Header() {
+    const [{ basket, user, search, tempData }, dispatch] = useStateValue();
+    const [searchInput, setSearchInput] = useState(search)
+  useEffect(() => {
+      dispatch({
+        type: "SET_SEARCHVALUE",
+        searchValue: searchInput,
+      })
+  }, [searchInput])
     const login = () => {
         if (user) {
             window.confirm("Do you want to Sign out?") && auth.signOut();
@@ -36,19 +37,17 @@ function Header({handleClick}) {
         menuList.classList.remove("move-left-for-list");
         setTimeout(() => (menuList.classList.toggle("move-right-for-list")), 100);
     }
-    // const handleClick = () => {
-    //     if (searchInput === "") { alert("please enter the product name to search") }
-    //     else {
-    //         data.forEach(item => item.title.includes(searchInput) && setNewArry(preState => [...preState, item]))
-    //         dispatch({
-    //             type: "SET_DATA",
-    //             data: newArry,
-    //         })
-    //         setSearchInput('')
-    //     }
-    // };
-    const doit = () => {
-        handleClick(searchInput,setSearchInput);
+    const handleClick = () => {
+        if (searchInput === "") { 
+            alert("please enter the product name to search") ;
+        }
+        else {
+            dispatch({
+                type: "SET_DATA",
+                search: searchInput,
+            })
+            setSearchInput('')
+        }
     };
     return (
         <>
@@ -61,15 +60,14 @@ function Header({handleClick}) {
                     <img className="header_logo" src={logo} alt="logo" />
                 </Link>
                 <div className="header-search">
-                    <input type="text" className="header_searchInput" placeholder={search} value={searchInput} onChange={e => setSearchInput(e.target.value)} />
-                    <SearchIcon className="header_searchIcon" onClick={doit} />
+                    <input type="text" className="header_searchInput" placeholde={search} value={searchInput} onChange={e => setSearchInput(e.target.value)} />
+                    <Link onClick={handleClick} to={`/search/${searchInput||"blank"}`} className="header_searchIcon_link"><SearchIcon className="header_searchIcon"  /></Link>
                 </div>
 
                 <div className="header_nav">
                     <HeaderLink path={!user && "/login"} span1={user ? `Hello ${user?.email}` : "Hello Guest"} span2={user ? "Sign out" : "Sign in"} click={login} />
                     <HeaderLink path="/login" span1="Returns" span2="& Orders" />
                     <HeaderLink path="/checkout" span1="Your" span2="Prime" />
-
                     <Checkout path="/checkout" price={basket?.length} />
                 </div>
                 {/* basket icon with banner */}

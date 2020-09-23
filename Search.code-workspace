@@ -1,0 +1,44 @@
+{
+  "folders": [
+    {
+      "path": "..\\InterViewFolder\\data"
+    },
+    {
+      "path": "..\\InterViewFolder\\axios"
+    },
+    {
+      "path": "..\\..\\first-app"
+    },
+    {
+      "path": "..\\rest"
+    },
+    {
+      "path": "..\\InterViewFolder\\to-do-firebase\\to-do"
+    },
+    {
+      "path": "..\\backend-managment-system\\backend-management-project"
+    },
+    {
+      "path": "..\\backend-managment-system\\admin-server_final"
+    },
+    {
+      "path": "..\\portfolio_one-page-template-master"
+    },
+    {
+      "path": "..\\MyPortFolio"
+    },
+    {
+      "path": "..\\MyCodeNotes"
+    },
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "data"
+  },
+  "emmet.syntaxProfiles": {},
+  "emmet.extensionsPath": "",
+  "emmet.includeLanguages": {},
+  "emmet.excludeLanguages": ["markdown"]
+}

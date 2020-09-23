@@ -39,7 +39,7 @@ function App() {
   // console.log(user)
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       <Switch>    
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/login" component={Login} />

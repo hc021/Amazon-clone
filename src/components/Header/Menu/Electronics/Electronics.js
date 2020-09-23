@@ -3,7 +3,7 @@ import './Electronics.css'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { Link } from 'react-router-dom';
 
-function Electronics({ categroy, itself, menu_list }) {
+function Electronics({ categroy, itself, menu_list,handleMenu }) {
     const closeElectronics = () => {
         itself.classList.remove('ele-moveLeft');
         categroy.classList.remove('ele-moveLeft');
@@ -11,14 +11,15 @@ function Electronics({ categroy, itself, menu_list }) {
             menu_list.classList.remove('scroll-switchOff');
         }, 300)
     };
+    
     return (
         <div className="electronics-list ">
             <li onClick={closeElectronics} className="main-menu"><ArrowBackIcon className="menu-arrowBackIcon" /> Main Menu</li>
             <li>ELECTRONICS</li>
             <li>All Electronics</li>
-            <li><Link to="/search/camera photo">Camera & Photo</Link></li>
-            <li><Link to="/search/Home Cinema Audio">Home Cinema & Audio</Link></li>
-            <li><Link to="/search/Speakers">Speakers</Link></li>
+            <li><Link onClick={handleMenu} to="/search/Controller">Controller</Link></li>
+            <li><Link onClick={handleMenu} to="/search/Monitor">Monitor</Link></li>
+            <li><Link onClick={handleMenu} to="/search/Watch">Watch</Link></li>
             <li>Headphones</li>
             <li>Televisions</li>
             <li>Mobile Phones & Accessories</li>

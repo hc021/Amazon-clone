@@ -82,7 +82,7 @@ export default [
   },
   {
     "id": "11",
-    "title": "Omega Aqua Terra",
+    "title": "Omega Aqua Terra Men Watch",
     "price": 4129.96,
     "rating": 5,
     "limit": 1,

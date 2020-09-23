@@ -4,15 +4,21 @@ export const initialState = {
     user: null,
     data,
     search: '',
-
+    tempData: data,
 }
-
 function reducer(state, action) {
     switch (action.type) {
+        case "RESET_DATA":
+            return { ...state, tempData: action.reset };
         case "SET_DATA":
-            return { ...state, data: action.data };
+            let tempData = [];
+            data.forEach(item => {
+                item.title.toLowerCase().includes(action.search.toLowerCase()) && tempData.push(item);
+            })
+            console.log(tempData)
+            return { ...state, tempData };
         case "SET_SEARCHVALUE":
-            return { ...state, search: action.search };
+            return { ...state, search: action.searchValue };
         case "SET_USER":
             return { ...state, user: action.user };
         case "ADD_TO_BASKET":

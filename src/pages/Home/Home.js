@@ -7,42 +7,12 @@ import Header from '../../components/Header/Header'
 
 
 function Home() {
-    const [{ data },dispatch] = useStateValue();
+    const [{ data, },dispatch] = useStateValue();
 
-    const [newArry, setNewArry] = useState([]);
-    useEffect(()=>{
-
-    },[data])
-    const handleClick = (searchInput,setSearchInput) => {
-        if (searchInput === "") { alert("please enter the product name to search") }
-        else {
-            data.forEach(item => item.title.includes(searchInput) && setNewArry(preState => [...preState, item]))
-            dispatch({
-                type: "SET_DATA",
-                data: newArry,
-            })
-            setSearchInput('')
-        }
-    };
-
-    if (data?.length < 11) {
-       
+    
         return (
-            <>
-            <Header handleClick={handleClick}/>
-            <div className="home">
-                <img src={banner} alt="banner" className="home_image" />
-                <div className="home_row">
-                    {data?.map((item, index) => (index < 8 && <Product key={index} id={item.id} title={item.title} price={item.price} rating={item.rating} image={item.image} limit={item.limit} />))}
-                </div>
-            </div>
-            </> 
-        )
-    }
-    else {
-        return (
-            <>
-             <Header  handleClick={handleClick}/>
+            
+            //  {/* <Header  handleClick={handleClick}/> */}
               <div className="home">
                 <img src={banner} alt="banner" className="home_image" />
                 <div className="home_row">
@@ -55,10 +25,10 @@ function Home() {
                     {data?.map((item, index) => ((index >= 10) && <Product key={index} id={item.id} title={item.title} price={item.price} rating={item.rating} image={item.image} limit={item.limit} />))}
                 </div>
             </div>
-            </>
+            
            
         )
-    }
+    
 }
 
 export default Home
